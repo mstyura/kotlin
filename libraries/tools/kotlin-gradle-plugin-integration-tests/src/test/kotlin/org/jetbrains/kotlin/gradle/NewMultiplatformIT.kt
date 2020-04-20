@@ -56,7 +56,7 @@ fun configure(): NativeTargets {
 }
 
 class NewMultiplatformIT : BaseGradleIT() {
-    val gradleVersion = GradleVersionRequired.None
+    val gradleVersion = GradleVersionRequired.FOR_MPP_SUPPORT
 
     val nativeHostTargetName = configure().current
     val supportedNativeTargets = configure().supported

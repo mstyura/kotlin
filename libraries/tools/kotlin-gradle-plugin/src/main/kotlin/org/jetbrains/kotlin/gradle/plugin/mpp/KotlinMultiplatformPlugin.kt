@@ -21,6 +21,7 @@ import org.gradle.api.publish.maven.tasks.AbstractPublishToMaven
 import org.gradle.api.tasks.compile.AbstractCompile
 import org.gradle.jvm.tasks.Jar
 import org.gradle.util.ConfigureUtil
+import org.gradle.util.GradleVersion
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.dsl.configureOrCreate
 import org.jetbrains.kotlin.gradle.dsl.kotlinExtension
@@ -56,7 +57,7 @@ class KotlinMultiplatformPlugin(
     }
 
     override fun apply(project: Project) {
-        checkGradleCompatibility()
+        checkGradleCompatibility("the Kotlin Multiplatform plugin", GradleVersionRequired.FOR_MPP_SUPPORT)
 
         project.plugins.apply(JavaBasePlugin::class.java)
         SingleWarningPerBuild.show(project, "Kotlin Multiplatform Projects are an experimental feature.")

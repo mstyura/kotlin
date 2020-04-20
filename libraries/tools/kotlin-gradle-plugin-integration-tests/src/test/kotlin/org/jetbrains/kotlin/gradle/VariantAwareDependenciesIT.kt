@@ -10,7 +10,7 @@ import org.jetbrains.kotlin.gradle.util.*
 import org.junit.Test
 
 class VariantAwareDependenciesIT : BaseGradleIT() {
-    private val gradleVersion = GradleVersionRequired.None
+    private val gradleVersion = GradleVersionRequired.FOR_MPP_SUPPORT
 
     @Test
     fun testJvmKtAppResolvesMppLib() {

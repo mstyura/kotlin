@@ -21,8 +21,11 @@ import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 class HierarchicalMppIT : BaseGradleIT() {
+    override val defaultGradleVersion: GradleVersionRequired
+        get() = gradleVersion
+
     companion object {
-        private val gradleVersion = GradleVersionRequired.AtLeast("5.0")
+        private val gradleVersion = GradleVersionRequired.FOR_MPP_SUPPORT
     }
 
     @Test
